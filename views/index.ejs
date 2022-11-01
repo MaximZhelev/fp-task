@@ -1,0 +1,105 @@
+<%- include('partials/header.ejs') %>
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <form method="get">
+          <% filters.forEach(filter => { %>
+          <label class="text-center m-2" for="<%= filter.id %>"
+            ><%= filter.id %></label
+          >
+          <select
+            name="<%= filter.id %>"
+            class="form-select m-2"
+            id="<%= filter.id %>"
+            aria-label="Default select example"
+          >
+            <option value="" selected disabled hidden>Choose here</option>
+            <% filter.values.forEach(filterValue => { %>
+            <option name="<%= filterValue %>" value="<%= filterValue %>">
+              <%= filterValue %>
+            </option>
+            <% }) %>
+          </select>
+          <% }) %>
+
+          <label class="text-center m-2" for="price">Price</label>
+          <div class="form-group text-center">
+            <input
+              id="price"
+              type="range"
+              name="price"
+              min="0"
+              max="500"
+              class="form-range"
+              onInput="$('#rangeval').html($(this).val())"
+            />
+            <span class="text-center">
+              <span>$</span>
+              <span id="rangeval">250</span>
+            </span>
+          </div>
+          <button
+            class="btn btn-success button text-center ms-auto"
+            type="submit"
+          >
+            Apply
+          </button>
+        </form>
+      </div>
+      <div class="row col-8 items">
+        <% products.items.forEach(product=> { %>
+        <div class="col-6">
+          <div class="card">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item image-item text-center">
+                <img
+                  class="img-fluid rounded mx-auto d-block"
+                  src="/images/<%= product.image %>"
+                  alt="<%= product.image %>"
+                />
+              </li>
+              <li class="list-group-item text-center desc">
+                <h5 class="card-title"><%= product.name %></h5>
+              </li>
+              <li class="list-group-item">
+                <div class="card-body">
+                  <% if (product.price_max) { %>
+                  <span class="card-link">
+                    <del>$ <%= product.price_max %></del>
+                  </span>
+                  <span class="card-link">$ <%= product.price %> </span>
+                  <% } else { %>
+                  <span class="card-link">$<%= product.price %> </span> <% } %>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <% if (products.currentPage - 1 > 0) { %>
+      <li class="page-item">
+        <a class="page-link" href="<%= previousPage %>">Previous</a>
+      </li>
+      <% } else { %>
+      <li class="page-item">
+        <a class="page-link disabled" disable href="#">Previous</a>
+      </li>
+      <% } %> <% if (products.currentPage < products.totalPages) { %>
+      <li class="page-item">
+        <a class="page-link" href="<%= nextPage %>">Next</a>
+      </li>
+      <% } else { %>
+      <li class="page-item"><a class="page-link disabled" href="#">Next</a></li>
+      <% } %>
+    </ul>
+  </nav>
+</main>
+
+<%- include('partials/footer.ejs') %>

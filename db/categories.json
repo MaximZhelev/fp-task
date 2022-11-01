@@ -1,0 +1,36 @@
+[{
+    "id": "mens-clothing-suits",
+    "image": "categories/mens-clothing-suits.jpg",
+    "name": "Suits",
+    "page_description": "Shop Men's suits for business or pleasure. Enjoy from a variety of different styles and cuts.",
+    "page_title": "Mens Suits for Business and Casual",
+    "c_showInMenu": true
+}, {
+    "id": "mens-clothing-jackets",
+    "image": "categories/mens-clothing-sportscoats.png",
+    "name": "Jackets & Coats",
+    "page_description": "Shop Men's Jackets, Coats & Outerwear. Classic outdoor-tested garments with traditional styling details that provide comfort, insulation and ease of movement, whatever the weather.",
+    "page_title": "Men's Jackets Including Jackets & Blazzers",
+    "c_showInMenu": true
+}, {
+    "id": "mens-clothing-dress-shirts",
+    "image": "categories/mens-clothing-dress-shirts.jpg",
+    "name": "Dress Shirts",
+    "page_description": "Shop Men's dress shirts in a variety of colors and styles including striped, button down, non-iron & more",
+    "page_title": "Men's Dress Shirts including Striped, Button Down, Non-Iron & More",
+    "c_showInMenu": true
+}, {
+    "id": "mens-clothing-shorts",
+    "image": "categories/mens-clothing-shorts.png",
+    "name": "Shorts",
+    "page_description": "Shop Men's spring shorts in cotton. Variety of different fits.",
+    "page_title": "Men's Spring Shorts",
+    "c_showInMenu": true
+}, {
+    "id": "mens-clothing-pants",
+    "image": "categories/mens-clothing-pants.png",
+    "name": "Pants",
+    "page_description": "Shop Men's Trousers. Practical, easy-to-wear styles wherever you're headed. Check out famous rugged, long-lasting trousers, jeans, cargo pants and more.",
+    "page_title": "Men's Pants Including Khakis, Cargos, Trousers, Jeans & More",
+    "c_showInMenu": true
+}]
